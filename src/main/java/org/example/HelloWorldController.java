@@ -12,8 +12,8 @@ import java.util.Random;
 
 @RestController
 class HelloWorldController {
+    
     @GetMapping("/quote/{date}")
-  //  @Path("quote/{date}")
     public MassageResponse quote(@PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date) {
         if (date.isBefore(LocalDate.now().minusDays(15))) {
             return new MassageResponse("La antelación mínima para reservar es 15 días");
