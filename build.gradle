@@ -19,5 +19,5 @@ test {
 }
 
 bootRun {
-    mainClass = 'org.example.RestServiceApplication'
+    mainClass = 'com.trc.massage.RestServiceApplication'
 }

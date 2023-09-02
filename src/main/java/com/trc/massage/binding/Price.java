@@ -1,4 +1,4 @@
-package org.example;
+package com.trc.massage.binding;
 
 public record Price(Double amount, String currency) {
 }

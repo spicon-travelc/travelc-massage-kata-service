@@ -1,7 +1,4 @@
-package org.example;
-
-import java.time.Duration;
-import java.util.List;
+package com.trc.massage.binding;
 
 public record Therapist(String code,
                         String name,

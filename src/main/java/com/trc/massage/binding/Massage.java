@@ -1,4 +1,4 @@
-package org.example;
+package com.trc.massage.binding;
 
 import java.time.Duration;
 import java.util.List;
