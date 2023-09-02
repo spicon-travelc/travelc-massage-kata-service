@@ -1,32 +1,16 @@
 package org.example;
 
+
 import java.time.LocalDate;
 
-public class CancellationPolicy {
+public record CancellationPolicy(LocalDate date, Price amount, String percentage) {
 
-
-    private LocalDate date;
-    private Price amount;
 
     public CancellationPolicy(LocalDate date, Price amount) {
-        this.date = date;
-        this.amount = amount;
+        this(date, amount, null);
     }
 
-    public LocalDate getDate() {
-        return date;
+    public CancellationPolicy(LocalDate date, String percentage) {
+        this(date, null, percentage);
     }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public Price getAmount() {
-        return amount;
-    }
-
-    public void setAmount(Price amount) {
-        this.amount = amount;
-    }
-
 }
