@@ -77,7 +77,6 @@ class HelloWorldController {
                 , "DISABLED"
                 , ofMinutes(90)
                 , List.of(new CancellationPolicy(date.minusDays(365), new Price(0.0, "EUR"))));
-
         return List.of(massage1, massage2, massage3, massage4, massage5, massage6);
     }
 
