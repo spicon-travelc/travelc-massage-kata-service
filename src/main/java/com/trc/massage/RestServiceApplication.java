@@ -25,7 +25,7 @@ public class RestServiceApplication {
 @RestController
 class HelloWorldController {
 
-    @GetMapping("/massage/quote/{date}")
+    @GetMapping("/massages/quote/{date}")
     public MassageResponse quoteMassage(@PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date) {
         if (date.isBefore(LocalDate.now().minusDays(15))) {
             return new MassageResponse("La antelación mínima para reservar es de 15 días");
@@ -34,7 +34,7 @@ class HelloWorldController {
         return new MassageResponse(massages);
     }
 
-    @GetMapping("/massage/therapist")
+    @GetMapping("/massages/therapists")
     public TherapistResponse getTherapist() {
         var therapist1 = new Therapist("1", "María López", new Price(30.0, "EUR"), true);
         var therapist2 = new Therapist("2", "Carlos Rodríguez", new Price(55.0, "EUR"), false);
