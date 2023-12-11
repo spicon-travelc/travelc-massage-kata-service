@@ -23,7 +23,7 @@ public class RestServiceApplication {
 }
 
 @RestController
-class HelloWorldController {
+class MassageController {
 
     @GetMapping("/massages/quote/{date}")
     public MassageResponse quoteMassage(@PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date) {
@@ -34,24 +34,18 @@ class HelloWorldController {
         return new MassageResponse(massages);
     }
 
-    @GetMapping("/massages/therapists")
-    public TherapistResponse getTherapist() {
-        var therapist1 = new Therapist("1", "María López", new Price(30.0, "EUR"), true);
-        var therapist2 = new Therapist("2", "Carlos Rodríguez", new Price(55.0, "EUR"), false);
-        var therapist3 = new Therapist("3", "Luciana Alcuaz", new Price(70.0, "EUR"), true);
-        return new TherapistResponse(List.of(therapist1, therapist2, therapist3));
-    }
-
     private static List<Massage> buildMassages(LocalDate date) {
         var massage1 = new Massage("1"
                 , "Masaje sueco"
                 , buildStatus()
+                , new Price(25.0, "EUR")
                 , ofMinutes(30)
                 , List.of(new CancellationPolicy(date.minusDays(5), new Price(15.0, "EUR"))
                 , new CancellationPolicy(date.minusDays(6), new Price(30.0, "EUR"))));
         var massage2 = new Massage("2"
                 , "Masaje de Aromaterapia"
                 , "ON_REQUEST"
+                , new Price(50.0, "EUR")
                 , ofMinutes(85)
                 , List.of(new CancellationPolicy(date.minusDays(15), "25")
                 , new CancellationPolicy(date.minusDays(5), "50")
@@ -59,23 +53,27 @@ class HelloWorldController {
         var massage3 = new Massage("3"
                 , "Masaje Deportivo 60 minutos"
                 , buildStatus()
+                , new Price(60.0, "EUR")
                 , ofMinutes(60)
                 , List.of(new CancellationPolicy(date.minusDays(3), "50")
                 , new CancellationPolicy(date.plusDays(1), "100")));
         var massage4 = new Massage("4"
                 , "Masaje Deportivo 45 minutos"
                 , buildStatus()
+                , new Price(45.0, "EUR")
                 , ofMinutes(45)
                 , List.of(new CancellationPolicy(date.minusDays(10), "0")
                 , new CancellationPolicy(date, "100")));
         var massage5 = new Massage("5"
                 , "Masaje Tailandés"
                 , buildStatus()
+                , new Price(100.0, "EUR")
                 , ofMinutes(70)
                 , List.of(new CancellationPolicy(date.minusDays(365), new Price(100.0, "EUR"))));
         var massage6 = new Massage("6"
                 , "Masaje Shiatsu"
                 , "DISABLED"
+                , new Price(150.0, "EUR")
                 , ofMinutes(90)
                 , List.of(new CancellationPolicy(date.minusDays(365), new Price(0.0, "EUR"))));
         return List.of(massage1, massage2, massage3, massage4, massage5, massage6);
