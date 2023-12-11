@@ -2,14 +2,14 @@
 
 Servicio de masajes disponibles para un día concreto. Cada masaje tiene la siguiente información:
 
-Código del masaje
-Nombre
-Estado
-Duración
-Precio
-Política de cancelación
-Para acceder al servicio: get - http://localhost:38080/massages/quote/2023-10-02
+* Código del masaje
+* Nombre
+* Estado
+* Duración
+* Precio
+* Política de cancelación
 
+Para acceder al servicio: get - http://localhost:38080/massages/quote/yyyy-MM-dd
 
 Para ejecutar el servicio:
 
