@@ -45,7 +45,7 @@ class MassageController {
                 , new CancellationPolicy(date.minusDays(6), new Price(25.0, "EUR"))));
         var massage2 = new Massage("2"
                 , "Masaje de Aromaterapia con luces de colores"
-                , "ON_REQUEST"
+                , "AVAILABLE"
                 , new Price(300.0, "EUR")
                 , ofMinutes(85)
                 , Collections.emptyList());
@@ -78,7 +78,7 @@ class MassageController {
                 , List.of(new CancellationPolicy(date.minusDays(365), new Price(100.0, "EUR"))));
         var massage7 = new Massage("7"
                 , "Masaje Shiatsu"
-                , "DISABLED"
+                , "ON_REQUEST"
                 , new Price(150.0, "EUR")
                 , ofMinutes(90)
                 , List.of(new CancellationPolicy(date.minusDays(365), new Price(0.0, "EUR"))));
