@@ -42,7 +42,7 @@ class MassageController {
                 , new Price(25.0, "EUR")
                 , ofMinutes(30)
                 , List.of(new CancellationPolicy(date.minusDays(5), new Price(15.0, "EUR"))
-                , new CancellationPolicy(date.minusDays(6), new Price(30.0, "EUR"))));
+                , new CancellationPolicy(date.minusDays(6), new Price(25.0, "EUR"))));
         var massage2 = new Massage("2"
                 , "Masaje de Aromaterapia con luces de colores"
                 , "ON_REQUEST"
@@ -54,41 +54,42 @@ class MassageController {
                 , "AVAILABLE"
                 , new Price(60.0, "EUR")
                 , ofMinutes(60)
-                , List.of(new CancellationPolicy(date.minusDays(3), "50")
-                , new CancellationPolicy(date.plusDays(1), "100")));
+                , List.of(new CancellationPolicy(date.minusDays(3), new Price(30.0, "EUR")),
+                    new CancellationPolicy(date.minusDays(3), new Price(40.0, "EUR"))
+                , new CancellationPolicy(date.plusDays(1), new Price(50.0, "EUR"))));
         var massage4 = new Massage("4"
                 , "Masaje Deportivo 45 minutos"
                 , "AVAILABLE"
                 , new Price(45.0, "EUR")
                 , ofMinutes(45)
-                , List.of(new CancellationPolicy(date.minusDays(10), "0")
-                , new CancellationPolicy(date, "100")));
+                , List.of(new CancellationPolicy(date.minusDays(10), new Price(0.0, "EUR"))
+                , new CancellationPolicy(date, new Price(45.0, "EUR"))));
         var massage5 = new Massage("5"
-                , "Masaje de piedras calientes0"
+                , "Masaje de piedras calientes"
                 ,  "AVAILABLE"
                 , new Price(150.0, "EUR")
                 , ofMinutes(70)
                 , List.of(new CancellationPolicy(date.minusDays(365), new Price(150.0, "EUR"))));
-        var massage6 = new Massage("5"
+        var massage6 = new Massage("6"
                 , "Masaje Tailandés"
                 ,  "UNAVAILABLE"
                 , new Price(100.0, "EUR")
                 , ofMinutes(70)
                 , List.of(new CancellationPolicy(date.minusDays(365), new Price(100.0, "EUR"))));
-        var massage7 = new Massage("6"
+        var massage7 = new Massage("7"
                 , "Masaje Shiatsu"
                 , "DISABLED"
                 , new Price(150.0, "EUR")
                 , ofMinutes(90)
                 , List.of(new CancellationPolicy(date.minusDays(365), new Price(0.0, "EUR"))));
-        var massage8 = new Massage("2"
+        var massage8 = new Massage("8"
                 , "Masaje de Aromaterapia"
                 , "AVAILABLE"
                 , new Price(50.0, "EUR")
                 , ofMinutes(85)
-                , List.of(new CancellationPolicy(date.minusDays(15), "25")
-                , new CancellationPolicy(date.minusDays(5), "50")
-                , new CancellationPolicy(date.minusDays(2), "100")));
+                , List.of(new CancellationPolicy(date.minusDays(15), new Price(15.0, "EUR"))
+                , new CancellationPolicy(date.minusDays(5), new Price(25.0, "EUR"))
+                , new CancellationPolicy(date.minusDays(2), new Price(40.0, "EUR"))));
         return List.of(massage1, massage2, massage3, massage4, massage5, massage6, massage7, massage8);
     }
 }
